@@ -7,14 +7,8 @@ public class Calculator {
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
 
     BinaryOperator<Integer> devide = (x, y) -> {
-        try {
-            return x / y;
-        } catch (ArithmeticException exception) {
-            System.out.println("ОШИБКА. Деление на 0.");
-        } finally {
-            System.exit(1);
-        }
-        return 0;
+        int result = (x == 0 | y == 0) ? 0 : x / y;
+        return result;
     };
 
     UnaryOperator<Integer> pow = x -> x * x;
